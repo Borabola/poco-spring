@@ -7,7 +7,7 @@ import java.util.List;
 
 @Service
 public interface PersonService {
-    public List<Person> findAllPeople();
+    List<Person> findAllPeople();
 
     Person savePerson(Person person);
 
