@@ -2,6 +2,7 @@ package com.example.pocospring.controller;
 
 import com.example.pocospring.model.Person;
 import com.example.pocospring.service.PersonService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,7 +24,7 @@ public class PeopleController {
     }
 
     @PostMapping("save_person")
-    public Person savePerson(@RequestBody Person person) {
+    public Person savePerson(@Valid @RequestBody Person person) {
         return  personService.savePerson(person);
     }
 
@@ -33,7 +34,7 @@ public class PeopleController {
     }
 
     @PutMapping("/update_person")
-    public Person updatePerson(@RequestBody Person person) {
+    public Person updatePerson(@Valid @RequestBody Person person) {
        return personService.updatePerson(person);
     }
 
